@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>todo for mocha (testing)</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>Todo App</h1>
+  </header>
+
+  <main>
+    <form>
+      <label for="total">Total: (0)</label> <input type="radio" name="todoCount" id="total" checked hidden><br />
+      <label for="unfinished">Unfinished: (0)</label> <input type="radio" name="todoCount" id="unfinished" hidden><br />
+      <label for="finished">Finished: (0)</label> <input type="radio" name="todoCount" id="finished" hidden>
+    </form>
+
+    <form action="" id="todoContainer">
+      <div class="add-todo">
+        <input type="text" name="add-todo" id="addTodoData" class="addTodoInput" value="testing task" placeholder="write task here...">
+        <input type="button" value="Add" id="addTodoBtn" >
+      </div>
+    </form>
+  </main>
+
+
+  <script src="js/app.js" defer></script>
+</body>
+
+</html>
