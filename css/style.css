@@ -7,6 +7,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  background-color: var(--body-bg);
 }
 header {
   text-align: center;
@@ -15,6 +16,7 @@ header {
 }
 h1 {
   margin: 0;
+  color: var(--text-clr);
 }
 /* main style  */
 main {
@@ -22,7 +24,8 @@ main {
   padding: 1rem;
   margin: 10px auto;
   border-radius: 0.5rem;
-  background-color: #adb2d4;
+  background-color: var(--main-bg);
+  color: var(--text-clr);
 }
 .todo,
 .add-todo {
@@ -38,7 +41,7 @@ main {
 }
 
 input[data-finish="true"] {
-  text-decoration: line-through green;
+  text-decoration: line-through var(--finish-task);
 }
 
 form  {
@@ -67,7 +70,7 @@ input[type="text"] {
 
 input[type="button"] {
   font-family: "Courier New", Courier, monospace;
-  background-color: #eef1da;
+  background-color: var(--btn-bg);
   color: #000000;
   padding: 14px 20px;
   margin: 8px 0 8px 10px;
@@ -78,5 +81,5 @@ input[type="button"] {
 }
 
 input[type="button"]:hover {
-  background-color: #c7d9dd;
+  background-color: var(--btn-bg-hover);
 }
