@@ -22,7 +22,7 @@ main {
   padding: 1rem;
   margin: 10px auto;
   border-radius: 0.5rem;
-  background-color: #adb2d4;
+  background-color: var(--main-bg);  
 }
 .todo,
 .add-todo {
@@ -38,7 +38,8 @@ main {
 }
 
 input[data-finish="true"] {
-  text-decoration: line-through green;
+  text-decoration: line-through var(--finish-task);
+  background-color: var(--finish-task-bg);
 }
 
 form  {
