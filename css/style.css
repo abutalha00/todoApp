@@ -59,7 +59,7 @@ input[type="text"] {
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
+  border: 1px solid var(--task-input-bg);
   border-radius: 4px;
   box-sizing: border-box;
   font-family: "Courier New", Courier, monospace;
@@ -67,8 +67,8 @@ input[type="text"] {
 
 input[type="button"] {
   font-family: "Courier New", Courier, monospace;
-  background-color: #eef1da;
-  color: #000000;
+  background-color: var(--btn-bg);
+  color: var(--btn-light-clr);
   padding: 14px 20px;
   margin: 8px 0 8px 10px;
   font-weight: bold;
@@ -78,5 +78,5 @@ input[type="button"] {
 }
 
 input[type="button"]:hover {
-  background-color: #c7d9dd;
+  background-color: var(--btn-bg-hover);
 }
