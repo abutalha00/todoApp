@@ -1,9 +1,34 @@
 :root {
-    --main-bg: #adb2d4;
-    --finish-task: #008000;
-    --finish-task-bg: #A0C878;
-    --task-input-bg: #cccccc;
-    --btn-bg: #eef1da;
-    --btn-light-clr: #000000;
-    --btn-bg-hover: #c7d9dd;
+  --main-bg: #adb2d4;
+  --finish-task: #008000;
+  --finish-task-bg: #a0c878;
+  --task-input-bg: #cccccc;
+  --btn-bg: #eef1da;
+  --btn-light-clr: #000000;
+  --btn-bg-hover: #c7d9dd;
+}
+html,
+body {
+  background-color: var(--body-bg);
+}
+
+h1 {
+  color: var(--text-clr);
+}
+
+main {
+  background-color: var(--main-bg);
+}
+
+input[data-finish="true"] {
+  text-decoration: line-through var(--finish-task);
+  background-color: var(--finish-task-bg);
+}
+
+input[type="text"] {
+  border: 1px solid var(--task-input-bg);
+}
+
+input[type="button"] {
+  background-color: var(--btn-bg);
 }
