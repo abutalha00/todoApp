@@ -1,19 +1,54 @@
-const colorSchemeSwitch = document.querySelector(`label[data-color-scheme]`);
+const colorSchemeBtn = document.querySelector("[data-color-scheme]");
 
-colorSchemeSwitch.addEventListener("click", toggleColorScheme);
+const colorSchemeURL = {
+  dark: "./css/dark_scheme/dark-scheme-variables.css",
+  light: "./css/light_mode/light-mode-variable.css",
+};
 
-function toggleColorScheme(event) {
-  const isLight =
-    colorSchemeSwitch.getAttribute("data-color-scheme") === "light"
-      ? "light"
-      : "dark";
+colorSchemeBtn.addEventListener("click", changeColorScheme);
 
-    if (isLight === "light") {
-        console.log("light")
-        colorSchemeSwitch.setAttribute("data-color-scheme", "dark");
-        return;
-    } 
+function changeColorScheme(event) {
+  const currentColorScheme = colorSchemeBtn.getAttribute("data-color-scheme");
 
-    colorSchemeSwitch.setAttribute("data-color-scheme", "light");
-    console.log(isLight)
+  if (currentColorScheme === "light") darkColorScheme();
+  else if (currentColorScheme === "dark") lightColorScheme();
+  else console.log("invalid color scheme requested");
+}
+
+function lightColorScheme() {
+  colorSchemeBtn.setAttribute("data-color-scheme", "light");
+
+  const isExistStyle =
+    document.querySelector(
+      `[href="./css/dark_scheme/dark-scheme-variables.css"]`
+    ) ||
+    document.querySelector(`[href="./css/light_mode/light-mode-variable.css"]`);
+
+  if (isExistStyle) isExistStyle.remove();
+
+  const linkElem = document.createElement("link");
+  linkElem.setAttribute("rel", "stylesheet");
+  linkElem.setAttribute("href", colorSchemeURL.light);
+  document.head.appendChild(linkElem);
+
+  console.log("light color scheme (active)");
+}
+
+function darkColorScheme() {
+  colorSchemeBtn.setAttribute("data-color-scheme", "dark");
+
+  const isExistStyle =
+    document.querySelector(
+      `[href="./css/dark_scheme/dark-scheme-variables.css"]`
+    ) ||
+    document.querySelector(`[href="./css/light_mode/light-mode-variable.css"]`);
+
+  if (isExistStyle) isExistStyle.remove();
+
+  const linkElem = document.createElement("link");
+  linkElem.setAttribute("rel", "stylesheet");
+  linkElem.setAttribute("href", colorSchemeURL.dark);
+  document.head.appendChild(linkElem);
+
+  console.log("dark color scheme (active)");
 }
