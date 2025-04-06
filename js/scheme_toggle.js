@@ -7,6 +7,9 @@ const colorSchemeURL = {
 
 colorSchemeBtn.addEventListener("click", changeColorScheme);
 
+// setting user-scheme if site visited before and saved with different color-scheme
+storeColorScheme("user");
+
 function changeColorScheme(event) {
   const currentColorScheme = colorSchemeBtn.getAttribute("data-color-scheme");
 
@@ -31,7 +34,9 @@ function lightColorScheme() {
   linkElem.setAttribute("href", colorSchemeURL.light);
   document.head.appendChild(linkElem);
 
-  console.log("light color scheme (active)");
+  storeColorScheme("light");
+
+  // console.log("light color scheme (active)");
 }
 
 function darkColorScheme() {
@@ -50,5 +55,28 @@ function darkColorScheme() {
   linkElem.setAttribute("href", colorSchemeURL.dark);
   document.head.appendChild(linkElem);
 
-  console.log("dark color scheme (active)");
+  storeColorScheme("dark");
+
+  // console.log("dark color scheme (active)");
+}
+
+function storeColorScheme(colorScheme = "user") {
+  switch (colorScheme) {
+    case "light":
+      localStorage.setItem("userColorScheme", colorScheme);
+      break;
+    case "dark":
+      localStorage.setItem("userColorScheme", colorScheme);
+      break;
+    case "user":
+      const userColorScheme = localStorage.getItem("userColorScheme")
+        ? localStorage.getItem("userColorScheme")
+        : "light";
+      localStorage.setItem("userColorScheme", userColorScheme);
+      colorSchemeBtn.click();
+      console.log(userColorScheme, "scheme applied.");
+      break;
+    default:
+      console.log("invalid color scheme requested.");
+  }
 }
