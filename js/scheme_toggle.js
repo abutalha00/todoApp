@@ -35,8 +35,6 @@ function lightColorScheme() {
   document.head.appendChild(linkElem);
 
   storeColorScheme("light");
-
-  // console.log("light color scheme (active)");
 }
 
 function darkColorScheme() {
@@ -56,8 +54,6 @@ function darkColorScheme() {
   document.head.appendChild(linkElem);
 
   storeColorScheme("dark");
-
-  // console.log("dark color scheme (active)");
 }
 
 function storeColorScheme(colorScheme = "user") {
@@ -72,11 +68,13 @@ function storeColorScheme(colorScheme = "user") {
       const userColorScheme = localStorage.getItem("userColorScheme")
         ? localStorage.getItem("userColorScheme")
         : "light";
+      userColorScheme === "light" ? lightColorScheme() : darkColorScheme();
       localStorage.setItem("userColorScheme", userColorScheme);
-      colorSchemeBtn.click();
-      console.log(userColorScheme, "scheme applied.");
       break;
+
     default:
       console.log("invalid color scheme requested.");
   }
+
+  console.log(colorScheme, "scheme applied.");
 }

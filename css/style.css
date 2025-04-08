@@ -73,7 +73,7 @@ input[type="text"] {
 
 input[type="button"] {
   font-family: "Courier New", Courier, monospace;
-  background-color: var(--btn-bg);
+  background-color: var(--btn-bg-hover);
   padding: 14px 20px;
   margin: 8px 0 8px 10px;
   font-weight: bold;
