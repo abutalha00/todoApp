@@ -30,3 +30,5 @@ dark-mode {
   dark-icon: visible
 }
 ```
+
+Done.
