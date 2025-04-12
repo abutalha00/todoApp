@@ -29,7 +29,7 @@ function addNewTodo() {
 
   // console.log(addTodoData.value.trim() == null ? "valid" : "invalid") // debug
 
-  addTodoData.value = "testing task";
+  addTodoData.value = "";
 
   // update task status 
   todoCount();
